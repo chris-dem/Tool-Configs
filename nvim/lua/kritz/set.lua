@@ -12,8 +12,9 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir =  "~/.vim/undodir"
+vim.opt.undodir =  "C:/Users/csdem/undodir"
 vim.opt.undofile = true
+
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

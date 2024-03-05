@@ -63,5 +63,11 @@ return require('packer').startup(function(use)
       end
   }
   use('OmniSharp/omnisharp-vim')
+  -- use 'vimwiki/vimwiki'
+  -- install without yarn or npm
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use('pbrisbin/vim-mkdir')
+  use('godlygeek/tabular')
+  use('preservim/vim-markdown')
  end)
  
