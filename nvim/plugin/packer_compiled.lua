@@ -139,7 +139,7 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\markdown-preview.nvim",
+    path = "C:\\Users\\csdem\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
@@ -153,7 +153,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["null-ls.nvim"] = {
-    config = { "\27LJ\2\n—\1\0\0\6\0\n\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\b\0004\4\3\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\a\5>\5\2\4=\4\t\3B\1\2\1K\0\1\0\fsources\1\0\0\nblack\15formatting\truff\16diagnostics\rbuiltins\nsetup\fnull-ls\frequire\0" },
+    config = { "\27LJ\2\nï¿½\1\0\0\6\0\n\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\b\0004\4\3\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\a\5>\5\2\4=\4\t\3B\1\2\1K\0\1\0\fsources\1\0\0\nblack\15formatting\truff\16diagnostics\rbuiltins\nsetup\fnull-ls\frequire\0" },
     loaded = true,
     path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
@@ -219,11 +219,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  tabular = {
-    loaded = true,
-    path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tabular",
-    url = "https://github.com/godlygeek/tabular"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
@@ -239,21 +234,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-markdown"] = {
-    loaded = true,
-    path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-markdown",
-    url = "https://github.com/preservim/vim-markdown"
-  },
-  ["vim-mkdir"] = {
-    loaded = true,
-    path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-mkdir",
-    url = "https://github.com/pbrisbin/vim-mkdir"
-  },
-  ["vim-python-pep8-indent"] = {
-    loaded = true,
-    path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-python-pep8-indent",
-    url = "https://github.com/vimjas/vim-python-pep8-indent"
-  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "C:\\Users\\christos.demetriou\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-visual-multi",
@@ -262,29 +242,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: markdown-preview.nvim
-time([[Setup for markdown-preview.nvim]], true)
-try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
-time([[Setup for markdown-preview.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
--- Config for: null-ls.nvim
-time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\n—\1\0\0\6\0\n\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\b\0004\4\3\0009\5\3\0009\5\4\0059\5\5\5>\5\1\0049\5\3\0009\5\6\0059\5\a\5>\5\2\4=\4\t\3B\1\2\1K\0\1\0\fsources\1\0\0\nblack\15formatting\truff\16diagnostics\rbuiltins\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
-time([[Config for null-ls.nvim]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

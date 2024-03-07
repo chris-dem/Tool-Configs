@@ -15,6 +15,7 @@ vim.opt.backup = false
 vim.opt.undodir =  "C:/Users/christos.demetriou/undodir"
 vim.opt.undofile = true
 
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
