@@ -7,7 +7,7 @@ local highlight = {
     "RainbowViolet",
     "RainbowCyan",
 }
-
+--
 local hooks = require 'ibl.hooks'
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
@@ -24,26 +24,14 @@ local highlight_set = {
     "Whitespace",
 }
 
-function foo()
-    function foo1()
-        function foo3()
-            if x < 3 then
-
-            end
-        end
-    end
-end
-
 require('ibl').setup({
     indent = {
         highlight = highlight,
     },
     whitespace = {
         highlight = highlight_set,
-        remove_blankline_trail = true,
     },
     scope = { highlight = highlight, char = "→"},
 })
 
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-

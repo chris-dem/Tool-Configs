@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use("nvim-lua/plenary.nvim") -- don't forget to add this one if you don't have it yet!
+    use("nvim-lua/plenary.nvim") -- don't forget to add this one if you don't have it yet!bla
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -66,23 +66,44 @@ return require('packer').startup(function(use)
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
     use('pbrisbin/vim-mkdir')
     use('godlygeek/tabular')
-    use('preservim/vim-markdown')
     use "lukas-reineke/indent-blankline.nvim"
     use({
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            local null_ls = require("null-ls")
-
-            null_ls.setup({
-                sources = {
-                    null_ls.builtins.diagnostics.ruff,
-                    null_ls.builtins.formatting.black,
-                }
-            })
-        end
     })
     use 'vimjas/vim-python-pep8-indent'
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",  -- recommended, use latest release instead of latest commit
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-telescope/telescope.nvim',
+            'hrsh7th/nvim-cmp',
+        }
+    })
+    use({
+        "NvChad/nvterm",
+        init = function()
+            require("core.utils").load_mappings "nvterm"
+        end,
+        config = function(_, opts)
+            require("nvterm").setup(opts)
+        end,
+    })
+    use "wfxr/minimap.vim"
+    use({
+        "NvChad/nvim-colorizer.lua",
+        event = "User FilePost",
+        config = function(_, opts)
+            require("colorizer").setup(opts)
+
+            -- execute colorizer as soon as possible
+            vim.defer_fn(function()
+                require("colorizer").attach_to_buffer(0)
+            end, 0)
+        end,
+    })
 end)
 
