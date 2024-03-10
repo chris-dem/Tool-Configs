@@ -210,3 +210,7 @@ require("obsidian").setup({
                 end,
             },
         })
+
+vim.keymap.set("n", "<leader>opf", vim.cmd.ObsidianQuickSwitch)
+vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew)
+vim.keymap.set("n", "<leader>otd", vim.cmd.ObsidianToday)
