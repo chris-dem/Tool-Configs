@@ -12,7 +12,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir =  "C:/Users/csdem/undodir"
+vim.opt.undodir =  "C:/Users/christos.demetriou/undodir"
 vim.opt.undofile = true
 
 

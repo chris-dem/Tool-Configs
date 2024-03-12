@@ -105,5 +105,6 @@ return require('packer').startup(function(use)
             end, 0)
         end,
     })
+    use 'f-person/git-blame.nvim'
 end)
 
