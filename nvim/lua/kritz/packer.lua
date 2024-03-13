@@ -106,6 +106,12 @@ return require('packer').startup(function(use)
         end,
     })
     use 'f-person/git-blame.nvim'
-    use 'Exafunction/codeium.vim'
+    use({
+        'Exafunction/codeium.vim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'hrsh7th/nvim-cmp',
+        },
+    })
 end)
 

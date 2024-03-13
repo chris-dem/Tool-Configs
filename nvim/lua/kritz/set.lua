@@ -12,7 +12,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir =  "C:/Users/csdem/undodir"
+vim.opt.undodir =  "C:/Users/christos.demetriou/undodir"
 vim.opt.undofile = true
 
 
@@ -28,4 +28,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
