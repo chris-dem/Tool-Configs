@@ -8,7 +8,7 @@ require("obsidian").setup({
     workspaces = {
         {
             name = "personal",
-            path = "c:/Users/csdem/vaults/personal/",
+            path = "c:/Users/christos.demetriou/vaults/personal/",
         },
     },
 

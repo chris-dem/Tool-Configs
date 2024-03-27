@@ -20,7 +20,9 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'omnisharp', 'pyright', 'eslint', "marksman", "ltex"},
+  ensure_installed = {
+      'tsserver', 'rust_analyzer', 'omnisharp', 'pyright', 'eslint', "marksman", "ltex",
+  },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -53,3 +55,11 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
+
+local lsp_zero = require('lsp-zero')
+
+vim.g.rustaceanvim = {
+  server = {
+    capabilities = lsp_zero.get_capabilities()
+  },
+}
