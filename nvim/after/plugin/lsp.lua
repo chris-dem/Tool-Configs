@@ -21,7 +21,7 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-      'tsserver', 'rust_analyzer', 'omnisharp', 'pyright', 'eslint', "marksman", "ltex",
+      'tsserver','omnisharp', 'pyright', 'eslint', "marksman", "ltex",
   },
   handlers = {
     lsp_zero.default_setup,
@@ -56,10 +56,3 @@ cmp.setup({
   }),
 })
 
-local lsp_zero = require('lsp-zero')
-
-vim.g.rustaceanvim = {
-  server = {
-    capabilities = lsp_zero.get_capabilities()
-  },
-}
