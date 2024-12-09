@@ -1,10 +1,10 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = {
-      "javascript", "rust",
+      "rust",
       "python", "c", "lua", "vim", "vimdoc",
-      "query", "c_sharp", "markdown", "markdown_inline",
-      "typescript", "tsx"
+      "query",  "markdown", "markdown_inline",
+      "haskell"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -29,3 +29,15 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require("nvim-treesitter.install").prefer_git = true
+--
+
+require("vim.treesitter.query").set( 
+    "markdown",
+    "highlights",
+     [[
+;From MDeiml/tree-sitter-markdown
+[
+  (fenced_code_block_delimiter)
+] @punctuation.delimiter
+]]
+)

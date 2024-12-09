@@ -24,13 +24,13 @@ return require('lazy').setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
 
-    {
-        'rose-pine/neovim',
-        name = 'rose-pine',
-        config = function()
-            vim.cmd("colorscheme rose-pine")
-        end
-    },
+    -- {
+    --     'rose-pine/neovim',
+    --     name = 'rose-pine',
+    --     config = function()
+    --         vim.cmd("colorscheme rose-pine")
+    --     end
+    -- },
 
     "nvim-lua/plenary.nvim",-- don't forget to add this one if you don't have it yet!bla
     {
@@ -75,10 +75,14 @@ return require('lazy').setup({
     { "iamcco/markdown-preview.nvim", build = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
     'pbrisbin/vim-mkdir',
     'godlygeek/tabular',
-    "lukas-reineke/indent-blankline.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        buftype_exclude = { filetypes = { "dashboard" } },
+    },
     {
         "nvimtools/none-ls.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        buftype_exclude = { filetypes = { "dashboard" } },
     },
     'vimjas/vim-python-pep8-indent',
     {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
@@ -86,6 +90,7 @@ return require('lazy').setup({
         "epwalsh/obsidian.nvim",
         version = "*",  -- recommended, use latest release instead of latest commit
         lazy = true,
+        buftype_exclude = { filetypes = { "dashboard" } },
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-treesitter/nvim-treesitter',
@@ -113,13 +118,7 @@ return require('lazy').setup({
         end,
     },
     'f-person/git-blame.nvim',
-    -- use({
-    --     'Exafunction/codeium.vim',
-    --     dependencies = {
-    --         'nvim-lua/plenary.nvim',
-    --         'hrsh7th/nvim-cmp',
-    --     },
-    -- })
+    { 'Exafunction/codeium.vim'}, 
     {
         "folke/noice.nvim",
         dependencies = {
@@ -215,5 +214,29 @@ return require('lazy').setup({
             require("lsp_lines").setup()
         end,
     },
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
+        "kkoomen/vim-doge",
+    },
+    {
+        "lervag/vimtex",
+        lazy = false,     -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+    },
+    -- {
+    --     'mrcjkb/haskell-tools.nvim',
+    --     version = '^4', -- Recommended
+    --     lazy = false, -- This plugin is already lazy
+    -- },
 })
 

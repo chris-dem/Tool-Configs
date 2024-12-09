@@ -21,16 +21,32 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
-      'tsserver','omnisharp', 'pyright', 'eslint', "marksman", "ltex",
+      'ts_ls','omnisharp', 'pyright', 'eslint', "marksman", "ltex","jedi_language_server", "hls"
   },
+  
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
+    rust_analyzer = function()
+        return true
+    end,
+    pyright = function()
+        require("lspconfig").pyright.setup {
+            handlers = handlers,
+            capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                client.server_capabilities.hoverProvider = false
+                client.server_capabilities.signature_help = false
+            end
+        }   
+    end,
   }
 })
+
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

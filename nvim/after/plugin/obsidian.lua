@@ -8,7 +8,7 @@ require("obsidian").setup({
     workspaces = {
         {
             name = "personal",
-            path = "c:/Users/csdem/vaults/personal/",
+            path = "~/notes/Knowledge-Base/personal/",
         },
     },
 
@@ -25,13 +25,13 @@ require("obsidian").setup({
 
     daily_notes = {
         -- Optional, if you keep daily notes in a separate directory.
-        folder = "notes/dailies",
+        folder = "30-daily",
         -- Optional, if you want to change the date format for the ID of daily notes.
         date_format = "%Y-%m-%d",
         -- Optional, if you want to change the date format of the default alias of daily notes.
         alias_format = "%B %-d, %Y",
         -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-        template = nil
+        template = "Weekly reports"
     },
 
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -112,6 +112,10 @@ require("obsidian").setup({
         -- Prefix image names with timestamp.
         return string.format("%s-", os.time())
     end,
+
+    templates = {
+        folder = "Templates",
+    },
 
 
     picker = {
@@ -199,6 +203,8 @@ require("obsidian").setup({
 
 vim.keymap.set("n", "<leader>opf", vim.cmd.ObsidianQuickSwitch)
 vim.keymap.set("n", "<leader>ofl", vim.cmd.ObsidianFollowLink)
+vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianSearch)
 vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew)
 vim.keymap.set("n", "<leader>oln", vim.cmd.ObsidianLinkNew)
 vim.keymap.set("n", "<leader>otd", vim.cmd.ObsidianToday)
+vim.keymap.set("n", "<leader>ot", vim.cmd.ObsidianTemplate)

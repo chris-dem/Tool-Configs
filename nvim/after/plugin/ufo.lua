@@ -1,5 +1,6 @@
+local ignore_types = { dashboard = '' }
 require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
+        return ignore_types[filetype] or {'treesitter', 'indent'}
     end
 })

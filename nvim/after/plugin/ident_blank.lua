@@ -25,6 +25,7 @@ local highlight_set = {
 }
 
 require('ibl').setup({
+    exclude = { filetypes = { "dashboard" } },
     indent = {
         highlight = highlight,
     },
